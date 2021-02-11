@@ -17,8 +17,16 @@ test('All form fields fill', () => {
     const emailInput = screen.getByLabelText(/email*/i);
     const messageInput = screen.getByLabelText(/message*/i);
 
-    userEvent.type(firstNameInput, "Hi");
+    userEvent.type(firstNameInput, "Ja");
     userEvent.type(lastNameInput, "Allen");
     userEvent.type(emailInput, "fakeemail@realsite.com");
-    userEvent.type(messageInput, "Hi, this is a message!")
+    userEvent.type(messageInput, "Hi, this is a message!");
+
+    const submitButton = screen.getByRole('button', { type: /submit/i });
+
+    //userEvent.click(submitButton);
+
+    const formText = 'ja';
+
+    //expect(formText).toBeInTheDocument();
 });
