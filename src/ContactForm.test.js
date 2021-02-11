@@ -12,11 +12,13 @@ test('Form renders', () => {
 test('All form fields fill', () => {
     render(<ContactForm />);
 
-    //const firstNameInput = screen.getByLabelText(/first name*/i);
+    const firstNameInput = screen.getByLabelText(/first name*/i);
     const lastNameInput = screen.getByLabelText(/last name*/i);
-    //const emailInput = screen.getByLabelText(/email*/i);
+    const emailInput = screen.getByLabelText(/email*/i);
     const messageInput = screen.getByLabelText(/message*/i);
 
-    //userEvent.type(firstNameInput, "Hi");
+    userEvent.type(firstNameInput, "Hi");
     userEvent.type(lastNameInput, "Allen");
-})
+    userEvent.type(emailInput, "fakeemail@realsite.com");
+    userEvent.type(messageInput, "Hi, this is a message!")
+});
